@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "Jiarong-covid-reporting-adf"
+		},
+		"linkserve_ablob_covidereporting_sa_connectionString": {
+			"value": ""
+		},
+		"ls_adls_covidreporting_accountKey": {
+			"value": ""
+		},
+		"ls_adls_covidreporting_properties_typeProperties_url": {
+			"value": "https://jiarongcovidreportingdl.dfs.core.windows.net/"
+		},
+		"ls_adls_covidreporting_connectionString": {
+			"value": ""
+		},
+		"ls_http_opendata_ecdc_europa_eu_properties_typeProperties_url": {
+			"value": "https://github.com"
+		},
+		"tr_ingest_hospital_admission_data_properties_pl_ingest_ecdc_data_parameters_sourceRelateURL": {
+			"value": "pamuba/covid19/blob/main/ecdc_data/hospital_admissions.csv"
+		},
+		"tr_ingest_hospital_admission_data_properties_pl_ingest_ecdc_data_parameters_sinkFileName": {
+			"value": "hospital_admissions.csv"
+		},
+		"trigger1_properties_typeProperties_scope": {
+			"value": "/subscriptions/87d90128-b291-4339-a270-0ea468781c96/resourceGroups/covid-reporting-rg/providers/Microsoft.Storage/storageAccounts/jiarongcovidreportsa"
+		}
+	}
+}
