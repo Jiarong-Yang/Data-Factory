@@ -57,7 +57,8 @@
 				"          country_code_3_letter,",
 				"          population,",
 				"          source,",
-				"          date),",
+				"          date_report,",
+				"          country_special = country + country_code_3_letter),",
 				"     columnNaming: '$N$V',",
 				"     lateral: true) ~> pivot1"
 			]
