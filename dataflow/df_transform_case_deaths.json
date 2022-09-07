@@ -9,7 +9,7 @@
 						"referenceName": "df_raw_cases_and_deaths",
 						"type": "DatasetReference"
 					},
-					"name": "CasesAndDeathsSource"
+					"name": "CasesAndDeaths"
 				}
 			],
 			"sinks": [],
@@ -20,8 +20,7 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     inferDriftedColumnTypes: true,",
-				"     ignoreNoFilesFound: false) ~> CasesAndDeathsSource"
+				"     ignoreNoFilesFound: false) ~> CasesAndDeaths"
 			]
 		}
 	}
