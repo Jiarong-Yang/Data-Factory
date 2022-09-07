@@ -20,12 +20,6 @@
 		"ls_http_opendata_ecdc_europa_eu_properties_typeProperties_url": {
 			"value": "@{linkedService().sourceBaseURL}"
 		},
-		"tr_ingest_hospital_admission_data_properties_pl_ingest_ecdc_data_parameters_sourceRelativeURL": {
-			"value": "pamuba/covid19/blob/main/ecdc_data/hospital_admissions.csv"
-		},
-		"tr_ingest_hospital_admission_data_properties_pl_ingest_ecdc_data_parameters_sinkFileName": {
-			"value": "hospital_admissions.csv"
-		},
 		"trigger1_properties_typeProperties_scope": {
 			"value": "/subscriptions/87d90128-b291-4339-a270-0ea468781c96/resourceGroups/covid-reporting-rg/providers/Microsoft.Storage/storageAccounts/jiarongcovidreportsa"
 		},
