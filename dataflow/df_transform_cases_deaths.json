@@ -59,7 +59,9 @@
 				"          source,",
 				"          date_report,",
 				"          country_special = country + country_code_3_letter),",
-				"     columnNaming: '$N$V',",
+				"     pivotBy(indicator, ['confirmed cases', 'deaths']),",
+				"     day_count = sum(cases_count),",
+				"     columnNaming: '$N_$V',",
 				"     lateral: true) ~> pivot1"
 			]
 		}
