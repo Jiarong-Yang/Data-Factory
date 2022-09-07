@@ -19,6 +19,9 @@
 				},
 				{
 					"name": "SelectOnlyRequiredField"
+				},
+				{
+					"name": "pivot1"
 				}
 			],
 			"scriptLines": [
@@ -44,11 +47,19 @@
 				"          population,",
 				"          indicator,",
 				"          cases_count = daily_count,",
-				"          date,",
-				"          source",
+				"          source,",
+				"          each(match(name =='date'),",
+				"               'date' + '_report' = $$)",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> SelectOnlyRequiredField"
+				"     skipDuplicateMapOutputs: true) ~> SelectOnlyRequiredField",
+				"SelectOnlyRequiredField pivot(groupBy(country,",
+				"          country_code_3_letter,",
+				"          population,",
+				"          source,",
+				"          date),",
+				"     columnNaming: '$N$V',",
+				"     lateral: true) ~> pivot1"
 			]
 		}
 	}
