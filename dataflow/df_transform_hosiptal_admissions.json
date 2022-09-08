@@ -60,6 +60,9 @@
 				},
 				{
 					"name": "SelectWeekly"
+				},
+				{
+					"name": "SelectDaily"
 				}
 			],
 			"scriptLines": [
@@ -179,7 +182,19 @@
 				"          source",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> SelectWeekly"
+				"     skipDuplicateMapOutputs: true) ~> SelectWeekly",
+				"SortDaily select(mapColumn(",
+				"          country,",
+				"          country_code_2_digit,",
+				"          country_code_3_digit,",
+				"          population,",
+				"          report_year_date,",
+				"          hospital_occupancy_Count = {Daily hospital occupancy_Count},",
+				"          icu_occupancy_Count = {Daily ICU occupancy_Count},",
+				"          source",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> SelectDaily"
 			]
 		}
 	}
