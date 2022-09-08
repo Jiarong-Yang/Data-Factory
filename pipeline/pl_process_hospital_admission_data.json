@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1",
+	"name": "pl_process_hospital_admission_data",
 	"properties": {
 		"activities": [
 			{
@@ -15,6 +15,10 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"dataflow": {
+						"referenceName": "df_transform_hosiptal_admissions",
+						"type": "DataFlowReference"
+					},
 					"compute": {
 						"coreCount": 8,
 						"computeType": "General"
