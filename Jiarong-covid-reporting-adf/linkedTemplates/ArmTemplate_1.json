@@ -23,7 +23,7 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "Data flow1",
+						"name": "Process_hospital_admission",
 						"type": "ExecuteDataFlow",
 						"dependsOn": [],
 						"policy": {
@@ -45,7 +45,8 @@
 									"DimDateSource": {},
 									"WeeklySink": {},
 									"DailySink": {}
-								}
+								},
+								"linkedServiceParameters": {}
 							},
 							"staging": {},
 							"compute": {
