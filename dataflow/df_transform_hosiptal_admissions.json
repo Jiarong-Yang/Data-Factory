@@ -1,0 +1,27 @@
+{
+	"name": "df_transform_hosiptal_admissions",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ds_raw_hospital_admission",
+						"type": "DatasetReference"
+					},
+					"name": "HospitalAdmissionSource"
+				}
+			],
+			"sinks": [],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          {<!DOCTYPE html>} as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> HospitalAdmissionSource"
+			]
+		}
+	}
+}
