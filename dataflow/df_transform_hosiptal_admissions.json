@@ -26,7 +26,22 @@
 					"name": "DimDateSource"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "ds_processed_hospital_admissions_weekly",
+						"type": "DatasetReference"
+					},
+					"name": "WeeklySink"
+				},
+				{
+					"dataset": {
+						"referenceName": "ds_processed_hospital_admission_daily",
+						"type": "DatasetReference"
+					},
+					"name": "DailySink"
+				}
+			],
 			"transformations": [
 				{
 					"name": "SelectRequdFields"
@@ -194,7 +209,22 @@
 				"          source",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> SelectDaily"
+				"     skipDuplicateMapOutputs: true) ~> SelectDaily",
+				"SelectWeekly sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     partitionFileNames:[''],",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> WeeklySink",
+				"SelectDaily sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> DailySink"
 			]
 		}
 	}
