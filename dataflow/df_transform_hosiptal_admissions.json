@@ -222,7 +222,7 @@
 				"     partitionBy('hash', 1)) ~> WeeklySink",
 				"SelectDaily sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     partitionFileNames:['hospital_admission_weekly'],",
+				"     partitionFileNames:['hospital_admission_daily'],",
 				"     truncate: true,",
 				"     umask: 0022,",
 				"     preCommands: [],",
