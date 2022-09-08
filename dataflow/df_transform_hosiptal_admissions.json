@@ -213,6 +213,7 @@
 				"SelectWeekly sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     partitionFileNames:['hospital_admission_weekly'],",
+				"     truncate: true,",
 				"     umask: 0022,",
 				"     preCommands: [],",
 				"     postCommands: [],",
