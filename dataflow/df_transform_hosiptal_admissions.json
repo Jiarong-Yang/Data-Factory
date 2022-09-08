@@ -119,7 +119,9 @@
 				"     disjoint: false) ~> SplitDailyFormWeek@(Weekly, Daily)",
 				"DimDateSource derive(scdc_year_week = year + \"-w\" + lpad(week_of_year,2,\"0\")) ~> DerivedECDCYearWeek",
 				"DerivedECDCYearWeek aggregate(groupBy(scdc_year_week,",
-				"          {} = ERROR_FUNCTION(''))) ~> AggDimDate"
+				"          {} = ERROR_FUNCTION('')),",
+				"     week_start_date = min(date),",
+				"          week_end_date = max(date)) ~> AggDimDate"
 			]
 		}
 	}
